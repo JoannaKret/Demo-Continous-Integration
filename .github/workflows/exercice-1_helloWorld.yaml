@@ -1,0 +1,21 @@
+#Nom du workflow
+name: Excerice Hello World
+
+# Trigger :
+on: [push]
+
+# Liste des jobs :
+jobs:
+
+  # Premier job
+  my-first-job:
+    # Définit le runner qui va exécuter le workflow
+    runs-on: ubuntu-latest
+    # List des étapes (steps)
+    steps:
+        # Attribut name qui permet de définir le nom de l'étape
+      - name: Récupérer le code
+        # Contenu de l'étape
+        uses: actions/checkout@v3
+      - name:  Imprimer "Hello World"
+        run: echo "Hello World"
