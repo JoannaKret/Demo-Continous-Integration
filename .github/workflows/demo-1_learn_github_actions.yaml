@@ -1,0 +1,28 @@
+#Nom du workflow
+name: Learn Github Actions
+
+# Trigger :
+on: [push]
+
+# Liste des jobs :
+
+jobs:
+
+  # Premier job
+  check-bats-version:
+    # Définit le runner qui va exécuter le workflow
+    runs-on: ubuntu-latest
+    # List des étapes (steps)
+    steps:
+        # Attribut name qui permet de définir le nom de l'étape
+      - name: Récupérer le code
+        # Contenu de l'étape
+        uses: actions/checkout@v3
+      - name: Installer Node 14
+        uses: actions/setup-node@v3
+        with:
+          nose-version: '14'
+      - name: Installer bats
+        run: npm install -g bats
+      - name: Retourner la version des bats
+        run: bats -v
