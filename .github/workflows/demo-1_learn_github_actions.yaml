@@ -2,7 +2,7 @@
 name: Learn Github Actions
 
 # Trigger :
-on: [push]
+on: workflow_dispatch
 
 # Liste des jobs :
 

@@ -2,7 +2,7 @@
 name: Excerice Hello World
 
 # Trigger :
-on: [push]
+on: workflow_dispatch
 
 # Liste des jobs :
 jobs:

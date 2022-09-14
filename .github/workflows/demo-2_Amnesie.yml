@@ -1,0 +1,27 @@
+name: Amnesie
+
+on: workflow_dispatch
+
+# Variable d'enviornnement globale
+env:
+ NAME: Jojo
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+  # Variable dont la portée est lilitée à CE job
+    env:
+      ENTREPRISE: "Jojoprise"
+    steps:
+      - name: "Dire bonjour"
+        run: echo "Salut $NAME ! Tu travailles pour $ENTREPRISE ? Alors bon $DAY à toi !"
+        env:
+          DAY: mercredi
+      - name: "Mercredi ?!"
+        run: echo "Quel jour sommes nous ? $DAY ?"
+
+  say_goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dire au revoir"
+        run: echop "Au revoir $NAME ! Tu travailles pour quelle entreprise ? $ENTREPRISE ? Des bisous et à $DAY ! "
