@@ -24,4 +24,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Dire au revoir"
-        run: echop "Au revoir $NAME ! Tu travailles pour quelle entreprise ? $ENTREPRISE ? Des bisous et à $DAY ! "
+        run: echo "Au revoir $NAME ! Tu travailles pour quelle entreprise ? $ENTREPRISE ? Des bisous et à $DAY ! "
