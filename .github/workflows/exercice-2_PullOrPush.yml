@@ -1,0 +1,20 @@
+name: Pull or Push
+
+on: [push]
+
+env:
+  NAME1 : pull
+  NAME2 : push
+
+jobs:
+  print_pull:
+    runs-on: ubuntu-latest
+    - name: Imprimer pull
+      if: ${{ github.even_name == env.NAME1 }}
+      run: echo " C'est un pull"
+
+  print_push:
+    runs-on: ubuntu-latest
+    - name: Imprimer push
+      if: ${{ github.even_name == env.NAME2 }}
+      run: echo "C'est un push"
